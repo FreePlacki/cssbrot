@@ -1,15 +1,186 @@
+:root {
+    --s: 20;
+    --def-xa: -2.0;
+    --def-xb: 1.0;
+    --def-ya: -1.5;
+    --def-yb: 1.5;
+}
 body {
     background-color: #1d2021;
     color: #fbf1c7;
-    --grid-sz: 20;
 }
-.grid {
+#mandelbrot {
     display: grid;
-    grid-template-columns: repeat(var(--grid-sz), 30px);
+    grid-template-columns: repeat(var(--s), 30px);
     grid-auto-rows: 30px;
-    background-color: #282828;
+    --xa: var(--def-xa);
+    --xb: var(--def-xb);
+    --ya: var(--def-ya);
+    --yb: var(--def-yb);
 }
-.grid div {
+
+#mandelbrot:has(div[style*="--x:1;"]:hover) {
+    --xa: calc(var(--def-xa) + (1 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (1 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:2;"]:hover) {
+    --xa: calc(var(--def-xa) + (2 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (2 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:3;"]:hover) {
+    --xa: calc(var(--def-xa) + (3 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (3 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:4;"]:hover) {
+    --xa: calc(var(--def-xa) + (4 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (4 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:5;"]:hover) {
+    --xa: calc(var(--def-xa) + (5 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (5 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:6;"]:hover) {
+    --xa: calc(var(--def-xa) + (6 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (6 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:7;"]:hover) {
+    --xa: calc(var(--def-xa) + (7 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (7 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:8;"]:hover) {
+    --xa: calc(var(--def-xa) + (8 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (8 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:9;"]:hover) {
+    --xa: calc(var(--def-xa) + (9 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (9 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:10;"]:hover) {
+    --xa: calc(var(--def-xa) + (10 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (10 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:11;"]:hover) {
+    --xa: calc(var(--def-xa) + (11 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (11 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:12;"]:hover) {
+    --xa: calc(var(--def-xa) + (12 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (12 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:13;"]:hover) {
+    --xa: calc(var(--def-xa) + (13 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (13 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:14;"]:hover) {
+    --xa: calc(var(--def-xa) + (14 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (14 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:15;"]:hover) {
+    --xa: calc(var(--def-xa) + (15 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (15 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:16;"]:hover) {
+    --xa: calc(var(--def-xa) + (16 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (16 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:17;"]:hover) {
+    --xa: calc(var(--def-xa) + (17 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (17 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:18;"]:hover) {
+    --xa: calc(var(--def-xa) + (18 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (18 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:19;"]:hover) {
+    --xa: calc(var(--def-xa) + (19 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (19 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--x:20;"]:hover) {
+    --xa: calc(var(--def-xa) + (20 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) - 0.5);
+    --xb: calc(var(--def-xa) + (20 - 1)*(var(--def-xb) - var(--def-xa))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:1;"]:hover) {
+    --ya: calc(var(--def-ya) + (1 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (1 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:2;"]:hover) {
+    --ya: calc(var(--def-ya) + (2 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (2 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:3;"]:hover) {
+    --ya: calc(var(--def-ya) + (3 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (3 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:4;"]:hover) {
+    --ya: calc(var(--def-ya) + (4 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (4 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:5;"]:hover) {
+    --ya: calc(var(--def-ya) + (5 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (5 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:6;"]:hover) {
+    --ya: calc(var(--def-ya) + (6 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (6 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:7;"]:hover) {
+    --ya: calc(var(--def-ya) + (7 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (7 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:8;"]:hover) {
+    --ya: calc(var(--def-ya) + (8 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (8 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:9;"]:hover) {
+    --ya: calc(var(--def-ya) + (9 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (9 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:10;"]:hover) {
+    --ya: calc(var(--def-ya) + (10 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (10 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:11;"]:hover) {
+    --ya: calc(var(--def-ya) + (11 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (11 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:12;"]:hover) {
+    --ya: calc(var(--def-ya) + (12 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (12 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:13;"]:hover) {
+    --ya: calc(var(--def-ya) + (13 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (13 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:14;"]:hover) {
+    --ya: calc(var(--def-ya) + (14 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (14 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:15;"]:hover) {
+    --ya: calc(var(--def-ya) + (15 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (15 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:16;"]:hover) {
+    --ya: calc(var(--def-ya) + (16 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (16 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:17;"]:hover) {
+    --ya: calc(var(--def-ya) + (17 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (17 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:18;"]:hover) {
+    --ya: calc(var(--def-ya) + (18 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (18 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:19;"]:hover) {
+    --ya: calc(var(--def-ya) + (19 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (19 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+#mandelbrot:has(div[style*="--y:20;"]:hover) {
+    --ya: calc(var(--def-ya) + (20 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) - 0.5);
+    --yb: calc(var(--def-ya) + (20 - 1)*(var(--def-yb) - var(--def-ya))/(var(--s) - 1) + 0.5);
+}
+
+#mandelbrot div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,8 +189,7 @@ body {
     background-color: rgba(255, 255, 255,
       calc(
 
-1/(1 + exp(abs(pow(pow(pow(pow(-2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1),2) - pow(-1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1),2) + -2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1),2) - pow(2*(-2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1))*(-1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1)) + -1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1),2) + -2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1),2) - pow(2*(pow(-2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1),2) - pow(-1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1),2) + -2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1))*(2*(-2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1))*(-1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1)) + -1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1)) + -1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1),2) + -2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1),2) - pow(2*(pow(pow(-2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1),2) - pow(-1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1),2) + -2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1),2) - pow(2*(-2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1))*(-1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1)) + -1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1),2) + -2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1))*(2*(pow(-2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1),2) - pow(-1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1),2) + -2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1))*(2*(-2.0 + (var(--x) - 1)*(1.0 - -2.0)/(20 - 1))*(-1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1)) + -1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1)) + -1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1)) + -1.5 + (var(--y) - 1)*(1.5 - -1.5)/(20 - 1),2))))
-
+1/(1 + exp(abs(pow(pow(pow(pow(pow(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(pow(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(pow(pow(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(pow(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(pow(pow(pow(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(pow(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(pow(pow(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(pow(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(pow(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1),2) - pow(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2) + var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(2*(var(--xa) + (var(--x) - 1)*(var(--xb) - var(--xa))/(20 - 1))*(var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1)) + var(--ya) + (var(--y) - 1)*(var(--yb) - var(--ya))/(20 - 1),2))))
 
     ));
 }

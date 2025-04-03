@@ -1,7 +1,7 @@
 from sys import argv
 
 
-def scale(x, a_to, b_to, a_from=1, b_from=20, ):
+def scale(x, a_to, b_to, a_from=1, b_from=20):
     """
     Maps x that is in [a_from, b_from] to be in [a_to, b_to]
     """
@@ -17,8 +17,8 @@ def var(name):
     return f"var(--{name})"
 
 
-x = scale(var('x'), -2.0, 1.0)
-y = scale(var('y'), -1.5, 1.5)
+x = scale(var('x'), var('xa'), var('xb'))
+y = scale(var('y'), var('ya'), var('yb'))
 
 
 def gen_iters(n):
